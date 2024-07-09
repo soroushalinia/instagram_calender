@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "instagram-private-api": "^1.46.1",
+    "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.4"
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "postcss": "^8",
