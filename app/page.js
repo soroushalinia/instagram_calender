@@ -54,14 +54,19 @@ export default function Home() {
   };
 
   const handleLogin = async () => {
-    const result = await login(usernameInput, passwordInput);
-    if (result[0] == "err login") {
-      setError("خطا: اتصال به اینترنت / رمز یا نام کاربری صحیح نیست");
-    } else {
-      setUsername(usernameInput);
-      localStorage.setItem("username", usernameInput);
-      setShowLogin(false);
+    try {
+      const result = await login(usernameInput, passwordInput);
+      if (result[0] == "err login") {
+        setError("خطا: اتصال به اینترنت / رمز یا نام کاربری صحیح نیست");
+      } else {
+        setUsername(usernameInput);
+        localStorage.setItem("username", usernameInput);
+        setShowLogin(false);
+      }
+    } catch (err) {
+      setError("رمز یا نام کاربری نادرست است")
     }
+    
   };
 
   useEffect(() => {
